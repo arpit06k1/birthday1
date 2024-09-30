@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffebf0, #ffe0e6);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sparkling background */
+.sparkle-background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(closest-side, rgba(255, 255, 255, 0.8), transparent);
+    animation: sparkle 5s infinite;
+    z-index: -1;
+}
+
+@keyframes sparkle {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200px 200px;
+    }
+}
+
+/* Floating Balloons */
+.balloon-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(to bottom, #ff66b3, #ff4081);
+    border-radius: 50%;
+    animation: floatBalloon 7s ease-in-out infinite;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #333;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-200px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(-400px) rotate(-10deg);
+    }
+}
+
+.balloon:nth-child(odd) {
+    animation-duration: 6s;
+}
+
+.balloon:nth-child(even) {
+    animation-duration: 8s;
+}
+
+/* Gift Box Animation */
+.gift-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.gift-box {
+    width: 200px;
+    height: 200px;
+    background-color: #ff66b3;
+    border-radius: 15px;
+    position: relative;
+    animation: rotateGiftBox 3s ease-in-out infinite;
+ 
+}
+
+.ribbon {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: #fff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #ff4081;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e0559b;
+}
+
+@keyframes rotateGiftBox {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Hidden surprise section */
+.hidden {
+    display: none;
+}
+
+/* Surprise section styling */
+#surprise {
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Add some space above */
+   
+}
+
+/* Confetti for surprise */
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#confetti div {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4081;
+    animation: fall 3s ease-out infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Happy Birthday, Aditi!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating Balloons -->
+    <div class="balloon-container">
+        <div class="balloon" style="--i:1;"></div>
+        <div class="balloon" style="--i:2;"></div>
+        <div class="balloon" style="--i:3;"></div>
+        <div class="balloon" style="--i:4;"></div>
+        <div class="balloon" style="--i:5;"></div>
+        <div class="balloon" style="--i:6;"></div>
+    </div>
+
+    <!-- Sparkling Background Animation -->
+    <div class="sparkle-background"></div>
+
+    <!-- Birthday Greeting and Gift Box -->
+    <div class="container">
+        <div class="greeting">
+            <h1>Happy Birthday, Aditi! 🎉</h1>
+            <p>Wishing you joy, love, and laughter today and always! 🎂</p>
+        </div>
+
+        <!-- Rotating Gift Box -->
+        <div class="gift-box-container">
+            <div class="gift-box">
+                <div class="ribbon"></div>
+                <button id="openBoxButton">🎁 Open Your Surprise</button>
+            </div>
+        </div>
+
+        <!-- Surprise Section (Initially Hidden) -->
+        <div id="surprise" class="hidden">
+            <div id="confetti"></div>
+            <h2>Surprise! 🎈🎁</h2>
+            <p>Aditi, you’re incredible! Have the best birthday ever! 💖</p>
+            <button id="playMusic">🎵 Play Birthday Song</button>
+        </div>
+
+        <!-- Audio Element for Birthday Music -->
+        <audio id="birthdayMusic" src="happy.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- Include JavaScript files -->
+    <script src="confetti.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
